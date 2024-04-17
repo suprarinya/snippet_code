@@ -11,6 +11,7 @@ Tutorials from https://www.youtube.com/watch?v=V_xro1bcAuA
 10. /04_pytorch_custom_datasets_exercises.ipynb     - exercise for 04_pytorch_custom_datasets
 
 Model Training Example that I tried to write
+
 11. /Cats & Dogs Example.ipynb.ipynb                - classification between cat and dog images
 12. /Endo.ipynb                                     - classification between part of endoscopic images
 13. /flowers.ipynb                                  - classification between flowers from custom dataset
