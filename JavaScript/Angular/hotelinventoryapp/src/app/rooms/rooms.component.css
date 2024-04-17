@@ -1,0 +1,21 @@
+.even{
+    background-color: white;
+}
+
+.odd{
+    background-color: greenyellow;
+}
+
+.room-table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tr-head{
+    background-color: green;
+    color: white;
+}
+
+.even:hover{background-color: #ddd;}
+.odd:hover{background-color: #ddd;}

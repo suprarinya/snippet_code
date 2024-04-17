@@ -1,0 +1,18 @@
+
+
+.main_content {
+    min-height: 100%;
+    /* Use padding-bottom with the same height as the footer */
+    padding-bottom: 60px; /* Adjust based on your footer's height */
+    box-sizing: border-box;
+    min-height: 650px;
+}
+
+.fixed_footer {
+    height: 60px; /* Adjust based on your footer's height */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* Add more styling for your footer */
+}

@@ -1,0 +1,151 @@
+
+.dicom_viewer_container {
+    width: 100%;
+    margin: 0px;
+    padding: 20px;
+    border: 4px dashed #f5fbff; 
+    text-align: center;
+    background-color: var(--bg);
+    opacity: 90%;
+    color: #145DA0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: calc(90vh - 120px); 
+    border-radius: 1px;
+  }
+  
+  .dicom_viewer_header {
+    margin-bottom: 20px;
+  }
+  
+  .dicom_viewer_content {
+    margin-top: calc(35vh - 150px);
+    margin-bottom: 20px;
+    height: 100%;
+  }
+
+  .dicom_image {
+    /* height: 0%; */
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .dicom_image canvas{
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+  }
+  
+  .dicom_viewer_actions button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 25px;
+    width: 350px;
+  }
+  
+  .dicom_viewer_actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal {
+    background-color: var(--bg);
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px; /* Adjust width as needed */
+  }
+  
+  .modalTitle {
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  
+  .urlLabel {
+    display: block;
+    color: #aaa;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  
+  .urlInput {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #555;
+    background-color: var(--bgSoft);
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cancelButton, .loadButton {
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .cancelButton {
+    background-color: var(--bgSoft);
+    color: #ccc;
+  }
+  
+  .loadButton {
+    background-color: var(--success);
+    color: #fff;
+  }
+  
+  .cancelButton:hover {
+    background-color: #27278b;
+  }
+  
+  .loadButton:hover {
+    background-color: #013A20;
+  }
+
+  .msgWarning{
+    color: red;
+    margin-bottom: 15px;
+  }
+
+  .test{
+    background-color: red;
+  }
+
+  .frameIndicator {
+    position: absolute;
+    bottom: 0; /* Position at the bottom */
+    left: 0; /* Align to the left */
+    color: white; /* Text color, adjust as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px; /* Add some padding around the text */
+    font-size: 14px; /* Adjust the font size as needed */
+  }
+  

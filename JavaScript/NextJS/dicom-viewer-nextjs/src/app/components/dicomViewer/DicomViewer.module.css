@@ -1,0 +1,42 @@
+.dicomViewer {
+    position: relative;
+    background-color: #F9F1F0;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 90%;
+    padding: 10px;
+    background-color: var(--bg);
+  }
+  
+  .acceptButton {
+    background-color: var(--success);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+
+  
+  .toolBar {
+    background-color: var(--bg);
+    opacity: 90%;
+    position: relative;
+    height: calc(90vh - 120px);
+  }
+  
+  .footer {
+    /* Styles for your footer */
+    background-color: var(--bg);
+    opacity: 90%;
+    position: relative;
+    height: calc(25vh - 120px);
+  }
+  

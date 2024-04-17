@@ -1,0 +1,157 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--bg);
+  } 
+
+  .container {
+    display: flex;
+    padding:5px;
+    align-items: center;
+    background-color: #000; 
+    max-height: calc(25vh - 120px);
+  }
+
+  .image {
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+    display: block;
+    border: 2px solid #00ff00; /* Example border color */
+  }
+  
+  .footerItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 0 10px; /* Adjust spacing as needed */
+    background: #333; /* Example background color */
+    color: #fff; /* Text color */
+    /* Add other styling such as border-radius or box-shadow if needed */
+  }
+
+
+ 
+  
+  .imageContainer {
+    position: relative;
+    width:100px;
+    height: calc(25vh - 130px);
+    margin-right: 10px; /* Adjust spacing between elements as needed */
+  }
+  
+  .image {
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+    display: block;
+    position: relative;
+    border: 2px solid #00ff00; /* Example border color */
+  }
+  
+  .imageLabel {
+    position: absolute;
+    bottom: 5px; /* Adjust position as needed */
+    left: 5px; /* Adjust position as needed */
+    background-color: #000; /* Adjust background color as needed */
+    color: #fff; /* Adjust text color as needed */
+    padding: 2px 5px; /* Adjust padding as needed */
+  }
+  
+  .addButton {
+    width:100px;
+    height: 100px; 
+    /* background-color: #333;  */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 50px; 
+    color: #fff; 
+    cursor: pointer;
+  }
+  
+
+  /* .import_container {
+    width: 500px;
+    background: #1E1E1E;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+  } */
+
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .modal {
+    background-color: var(--bg);
+    border-radius: 8px;
+    padding: 20px;
+    width: 400px; /* Adjust width as needed */
+  }
+  
+  .import_container h2 {
+    color: #F0F0F0;
+    margin-bottom: 10px;
+  }
+  
+  .import_container p {
+    color: #A9A9A9;
+    margin-bottom: 20px;
+  }
+  
+  .import_actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .btn_import, .btn_demo {
+    background: var(--bg);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    max-width: 400px;
+    width: 350px;
+  }
+  
+  .btn_import:hover, .btn_demo:hover {
+    background: var(--bgSoft);
+    color: var(--btn);
+  }
+  
+  .btn_cancel {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+    right: 0;
+    border-radius: 20px;
+  }
+  
+  .btn_cancel:hover {
+    color: var(--btn);
+    background-color: var(--bgSoft);
+    border-color: var(--bgSoft);
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  
