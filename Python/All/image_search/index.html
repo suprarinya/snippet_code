@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Search Image</h1>
+            <p class="mt-2" style="font-weight: bold;" hidden>- Please change your browser's zoom level percentage to 100% before continue</p>
+            <p style="font-weight: bold;">(ปรับเปอร์เซ็นต์การซูม ให้เท่ากับ 100% ก่อนการรัน test.py)</p>
+            <p style="font-weight: bold;" hidden>- Only detect .png file</p>
+            <p style="font-weight: bold;">(ทำการ detect แค่ไฟล์ภาพสกุล .png เท่านั้น)</p>
+            <p style="font-weight: bold;" hidden>- Need to prepare .png image for specific resolution display (or zoom level)</p>
+            <p style="font-weight: bold;">(ต้องทำการเตรียมไฟล์รูปภาพเฉพาะในแต่ละเปอร์เซ็นต์การซูมและขนาดหน้าจอ)</p>
+            <p style="font-weight: bold;" hidden>- Will not detect resized image even when has the same solution as in the browser (from testing)</p>
+            <p style="font-weight: bold;">(จะไม่ทำการ detect ถึงแม้ว่าจะเป็นรูปเดียวกันแต่ crop มาจากคนละเปอร์เซ็นต์การซูมและขนาดหน้าจอที่ต่างกัน)</p>
+            <p style="font-weight: bold;" hidden>- When move browser to another display, need to run python script again (test.py)</p>
+            <p style="font-weight: bold;">(หากมีการเปลี่ยนขนาดของหน้าจอจะต้องทำการรัน test.py ใหม่)</p>
+            <p>resolution: <span id="ori_reso"></span> <span id="resolution">100</span>%</p>
+            <p id="text">...</p>
+            <!-- <button id="start" class="btn btn-primary btn-sm" onclick="click_me()">Start Searching</button> -->
+            <br>
+
+            <button id="test" class="btn btn-dark btn-sm mt-4" style="margin-left:200px;" onclick="change_text('1')">Click</button>
+            <button id="test2" class="btn btn-dark btn-sm" style="margin-left: 1000px; margin-top: 300px;display: none;"  onclick="change_text('2')">Click</button>
+            <button id="home1" class="btn  btn-warning mt-5 ms-5" onclick="change_text('3')"><i class="fa fa-home" ></i> Home</button>
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" ></script>
+        <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script>
+            document.body.style.zoom = 1;
+
+            var socket = io.connect('http://localhost:3000');
+
+            socket.emit('chat message', 'send!!!')
+
+
+            function change_text(text){
+                // console.log(text);
+                $('#text').html('found button'+text)
+                setTimeout(() => {
+                    $('#text').html('...')
+                }, 1500);
+            }
+
+            var height0 = $(window).height();
+            var width0 = $(window).width();
+
+            // กรณีมีการย่อขนาด browser (แต่ไม่มีการเปลี่ยนขนาดจอ)
+            // if(width0 <= 1494){
+            //     width0 = 1494
+            // }
+
+            $('#ori_reso').html(`${window.screen.width}x${window.screen.height}`)
+            // console.log(window.screen.height, window.screen.width);
+            // socket.emit('chat message', `change_zoom${width0}x${100}`)
+
+            socket.emit('chat message', `change_home${width0}x${100}`)
+
+
+            setTimeout(() => {
+                    if(!$('#test').is(':visible')){
+                        $('#test').css('display', '')
+                    } else {
+                        $('#test').css('display', 'none')
+                    }
+
+                    if(!$('#test2').is(':visible')){
+                        $('#test2').css('display', '')
+                    } else {
+                        $('#test2').css('display', 'none')
+                    }
+                    socket.emit('chat message', `change_zoom${width0}x${100}`)
+                }, 2000);
+
+            setTimeout(() => {
+                socket.emit('chat message', `change_home${width0}x${100}`)
+            }, 4000);
+
+            $(window).resize(function() {
+                var height1 = $(window).height();
+                var width1 = $(window).width();
+                // console.log("changed height: "+height1);
+                // console.log("changd width: "+width1);
+
+                
+                var ratio = (height0 / height1) * 100
+                ratio = Math.round(ratio)
+                $('#resolution').html(ratio)
+
+                // กรณีมีการย่อขนาด browser (แต่ไม่มีการเปลี่ยนขนาดจอ)
+                // if(width0 <= 1494){
+                //     width0 = 1494
+                // }
+
+                socket.emit('chat message', `change_zoom${width0}x${ratio}`)
+
+                setTimeout(() => {
+                    socket.emit('chat message', `change_home${width0}x${110}`)
+                } , 2000);
+
+            });
+
+            
+
+        </script>
+    </body>
+</html>

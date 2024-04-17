@@ -1,0 +1,62 @@
+Handling a sudden crash and ensuring that the program continues running can be a challenging task, and it largely depends on the nature of the crash and the specific circumstances. In many cases, Python programs exit upon an unhandled exception or crash because it's often the safest way to prevent unpredictable behavior.
+
+However, there are some general techniques and tools you can use to handle exceptions and errors more gracefully and continue the program:
+
+1. **Try-Except Blocks**: Surround critical sections of your code with try-except blocks to catch and handle exceptions. This prevents the entire program from crashing due to a single error. You can log the error, display a user-friendly message, and continue with the program.
+
+```python
+try:
+    # Your code here
+except Exception as e:
+    print(f"An error occurred: {str(e)}")
+    # Continue with the program
+```
+
+2. **Logging**: Implement robust logging using the `logging` module. This allows you to log errors and other relevant information during program execution. In the event of a crash, you can review the logs to diagnose the issue.
+
+```python
+import logging
+
+logging.basicConfig(filename='my_program.log', level=logging.ERROR)
+
+try:
+    # Your code here
+except Exception as e:
+    logging.error(f"An error occurred: {str(e)}")
+    # Continue with the program
+```
+
+3. **Process Isolation**: Consider running specific critical parts of your code in separate processes or threads. If one process crashes, it won't affect the main program. You can use tools like `multiprocessing` for this purpose.
+
+4. **Watchdog**: You can use a watchdog process that monitors the main program and restarts it if it crashes. This is a more advanced approach and requires a good understanding of process management.
+
+5. **Error Recovery**: Implement error recovery mechanisms where the program can attempt to recover from errors or crashes, such as saving the program's state and resuming from a known point.
+
+6. **Unit Testing and Code Review**: Thoroughly test your code and perform code reviews to catch and fix issues before they cause crashes.
+
+7. **Debugging Tools**: Utilize debugging tools and techniques, such as using an integrated development environment (IDE) with debugging capabilities to identify and fix issues more quickly.
+
+8. **Memory Management**: Be mindful of memory leaks and resource management, as they can lead to crashes over time. Use tools like `memory_profiler` and `gc` to monitor memory usage.
+
+Keep in mind that handling crashes gracefully requires careful design and thorough testing. It's important to identify the root causes of crashes and address them rather than relying solely on mechanisms to recover from crashes. Additionally, some crashes may be due to external factors (e.g., hardware failures) that are beyond your control.
+
+        // image preview in pyqt5
+        // $('.video-preview').each(function(index) {
+        //     var video = $(this)[0];
+        //     var canvas = document.createElement('canvas'); 
+        //     var context = canvas.getContext('2d');
+        //     video.addEventListener('loadeddata', function() {
+        //         canvas.width = video.videoWidth;
+        //         canvas.height = video.videoHeight;
+        //         context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        //         video.pause();
+        //         setTimeout(() => {
+        //             $('.image-preview').eq(index).attr('src', canvas.toDataURL('image/jpeg'));
+        //         }, 1 * 100);
+        //     }, false);
+        //     video.preload = 'metadata';
+        //     video.muted = true;
+        //     video.playsInline = true;
+        //     video.setAttribute('crossOrigin', 'anonymous');
+        //     video.play();
+        // });

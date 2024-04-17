@@ -1,0 +1,136 @@
+USB Device number 0:
+DEVICE ID 04b8:0e27 on Bus 001 Address 031 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x200 USB 2.0
+ bDeviceClass           :    0x0 Specified at interface
+ bDeviceSubClass        :    0x0
+ bDeviceProtocol        :    0x0
+ bMaxPacketSize0        :   0x40 (64 bytes)
+ idVendor               : 0x04b8
+ idProduct              : 0x0e27
+ bcdDevice              :  0x100 Device 1.0
+ iManufacturer          :    0x1 EPSON
+ iProduct               :    0x2 TM-T82X
+ iSerialNumber          :    0x3 58355A4B0229330000
+ bNumConfigurations     :    0x1
+
+USB Device number 1:
+DEVICE ID 0461:4e9a on Bus 001 Address 025 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x200 USB 2.0
+ bDeviceClass           :    0x0 Specified at interface
+ bDeviceSubClass        :    0x0
+ bDeviceProtocol        :    0x0
+ bMaxPacketSize0        :   0x40 (64 bytes)
+ idVendor               : 0x0461
+ idProduct              : 0x4e9a
+ bcdDevice              :  0x126 Device 1.26
+ iManufacturer          :    0x1 Error Accessing String
+ iProduct               :    0x2 Error Accessing String
+ iSerialNumber          :    0x0 
+ bNumConfigurations     :    0x1
+
+USB Device number 2:
+DEVICE ID 04f2:b5c5 on Bus 001 Address 006 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x200 USB 2.0
+ bDeviceClass           :   0xef Miscellaneous
+ bDeviceSubClass        :    0x2
+ bDeviceProtocol        :    0x1
+ bMaxPacketSize0        :   0x40 (64 bytes)
+ idVendor               : 0x04f2
+ idProduct              : 0xb5c5
+ bcdDevice              : 0x9618 Device 150.18
+ iManufacturer          :    0x3 Error Accessing String
+ iProduct               :    0x1 Error Accessing String
+ iSerialNumber          :    0x2 Error Accessing String
+ bNumConfigurations     :    0x1
+
+USB Device number 3:
+DEVICE ID 17ef:609b on Bus 001 Address 030 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x200 USB 2.0
+ bDeviceClass           :    0x0 Specified at interface
+ bDeviceSubClass        :    0x0
+ bDeviceProtocol        :    0x0
+ bMaxPacketSize0        :   0x20 (32 bytes)
+ idVendor               : 0x17ef
+ idProduct              : 0x609b
+ bcdDevice              :  0x110 Device 1.1
+ iManufacturer          :    0x0 
+ iProduct               :    0x2 Error Accessing String
+ iSerialNumber          :    0x0 
+ bNumConfigurations     :    0x1
+
+USB Device number 4:
+DEVICE ID 1c7a:0570 on Bus 001 Address 007 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x110 USB 1.1
+ bDeviceClass           :    0x0 Specified at interface
+ bDeviceSubClass        :    0x0
+ bDeviceProtocol        :    0x0
+ bMaxPacketSize0        :    0x8 (8 bytes)
+ idVendor               : 0x1c7a
+ idProduct              : 0x0570
+ bcdDevice              : 0x1041 Device 16.41
+ iManufacturer          :    0x1 Error Accessing String
+ iProduct               :    0x2 Error Accessing String
+ iSerialNumber          :    0x3 Error Accessing String
+ bNumConfigurations     :    0x1
+
+USB Device number 5:
+DEVICE ID 8086:9d2f on Bus 001 Address 001 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :    0x0 USB 0.0
+ bDeviceClass           :    0x0 Specified at interface
+ bDeviceSubClass        :    0x0
+ bDeviceProtocol        :    0x0
+ bMaxPacketSize0        :    0x0 (0 bytes)
+ idVendor               : 0x8086
+ idProduct              : 0x9d2f
+ bcdDevice              :    0x0 Device 0.0
+ iManufacturer          :    0x0 
+ iProduct               :    0x0 
+ iSerialNumber          :    0x0 
+ bNumConfigurations     :    0x1
+
+USB Device number 6:
+DEVICE ID 8087:0a2a on Bus 001 Address 003 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x201 USB 2.01
+ bDeviceClass           :   0xe0 Wireless Controller
+ bDeviceSubClass        :    0x1
+ bDeviceProtocol        :    0x1
+ bMaxPacketSize0        :   0x40 (64 bytes)
+ idVendor               : 0x8087
+ idProduct              : 0x0a2a
+ bcdDevice              :    0x1 Device 0.01
+ iManufacturer          :    0x0 
+ iProduct               :    0x0 
+ iSerialNumber          :    0x0 
+ bNumConfigurations     :    0x1
+
+USB Device number 7:
+DEVICE ID 0461:4e9a on Bus 001 Address 025 =================
+ bLength                :   0x12 (18 bytes)
+ bDescriptorType        :    0x1 Device
+ bcdUSB                 :  0x200 USB 2.0
+ bDeviceClass           :    0x0 Specified at interface
+ bDeviceSubClass        :    0x0
+ bDeviceProtocol        :    0x0
+ bMaxPacketSize0        :   0x40 (64 bytes)
+ idVendor               : 0x0461
+ idProduct              : 0x4e9a
+ bcdDevice              :  0x126 Device 1.26
+ iManufacturer          :    0x1 Error Accessing String
+ iProduct               :    0x2 Error Accessing String
+ iSerialNumber          :    0x0 
+ bNumConfigurations     :    0x1
+

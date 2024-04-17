@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ room_name }}</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1>{{ room_name }}</h1>
+    <div id="video-container"></div>
+    <script>
+      var socket = new WebSocket("ws://localhost:{{ port }}/{{ room_name }}");
+
+      socket.onmessage = function(event) {
+        var data = event.data;
+        console.log(data);
+        var roomName = data.roomName;
+        var imageData = data.imageData;
+
+        if (roomName === "{{ room_name }}") {
+          var image = new Image();
+          image.src = "data:image/jpeg;base64," + imageData;
+          $("#video-container").html(image);
+        }
+      };
+    </script>
+  </body>
+</html>

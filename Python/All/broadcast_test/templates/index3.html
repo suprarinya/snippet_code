@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Home</h1>
+    <p>Choose a room:</p>
+    <video id="video" src="" style="width:250px;height:250px"></video>
+  </body>
+  <script>
+    let pc;
+    let videoElement = document.getElementById("video");
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const room = urlParams.get('room')
+
+    console.log(videoElement);
+
+    async function start(room) {
+      const offerSdp = await fetch(`http://localhost:5003//${room}`).then(res => res.text());
+      pc = new RTCPeerConnection();
+      const stream = await navigator.mediaDevices.getUserMedia({video: true});
+      stream.getTracks().forEach((track) => {
+        pc.addTrack(track, stream);
+      });
+      pc.ontrack = (event) => {
+        videoElement.srcObject = event.streams[0];
+      };
+      await pc.setRemoteDescription(new RTCSessionDescription({
+        type: 'offer',
+        sdp: offerSdp
+      }));
+      const answer = await pc.createAnswer();
+      await pc.setLocalDescription(answer);
+    }
+
+    start(room)
+
+  </script>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebRTC Video Broadcasting Example</title>
+</head>
+<body>
+    <h1>WebRTC Video Broadcasting Example</h1>
+
+    <video id="remoteVideo" autoplay></video>
+
+    <script>
+        // Get the video filepath from the URL
+        var filepath = window.location.pathname;
+
+        // Send an offer to the server
+        fetch('/offer', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({filepath: filepath})
+        })
+        .then(response => response.json())
+        .then(offer => {
+            // Create a new peer connection
+            var pc = new RTCPeerConnection();
+
+            // Add a video track to the connection
+            pc.addTransceiver('video', {'direction': 'recvonly'});
+
+            // Parse the remote description
+            pc.setRemoteDescription(new RTCSessionDescription(offer))
+            .then(() => {
+                // Create an answer
+                return pc.createAnswer();
+            })
+            .then(answer => {
+                // Set the local description
+                return pc.setLocalDescription(answer);
+            })
+            .then(() => {
+                // Send the answer to the server
+                return fetch('/answer', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({filepath: filepath, ...pc.localDescription})
+                });
+            })
+            .then(response => response.json())
+            .then(answer => {
+                // Parse the answer
+                pc.setRemoteDescription(new RTCSessionDescription(answer));
+            });
+            
+            // Attach the remote video to the video element
+            pc.ontrack = event => {
+                var stream = event.streams[0];
+                var video = document.getElementById('remoteVideo');
+                video.srcObject = stream;
+            };
+        });
+    </script>
+</body>
+</html>
