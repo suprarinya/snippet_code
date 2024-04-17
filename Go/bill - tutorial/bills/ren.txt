@@ -1,0 +1,5 @@
+Bill breakdown: 
+cake:                     ...$1.33 
+tea:                      ...$1.44 
+tip:                      ...$5 
+total:                    ...$7.8 

@@ -1,0 +1,6 @@
+Bill breakdown: 
+pie:                      ...$1.35 
+fried chicken:            ...$5.5 
+coke:                     ...$4.5 
+tip:                      ...$5 
+total:                    ...$16 
